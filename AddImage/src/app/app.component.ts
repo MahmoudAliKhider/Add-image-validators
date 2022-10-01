@@ -9,7 +9,8 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-  images:any[]=[]
+  images:any[]=[];
+  preview :any=""
   title = 'AddImage';
 //base64
 
@@ -39,9 +40,12 @@ if(sliderLength>5){
    this.images.push(reader.result)
     }
   }
-  
+
 }
 
+  }
+  display(index:any){
+this.preview =  this.images[index]
   }
 }
 

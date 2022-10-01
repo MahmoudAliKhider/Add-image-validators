@@ -2,13 +2,13 @@
   <button class="btn btn-danger delete">X</button>
   <div class="sliderBox">
       <div class="previewBox">
-          <img src="../assets/images/placeholder-image.png" id="preview" alt="">
+          <img onError="this.src='../assets/images/placeholder-image.png'" src="{{preview}}" id="preview" alt="">
       </div>
       <hr>
       <div class="slider">
           <div class="uploudBtn">
-              <label for="upload" class="btn btn-success">+</label>
-              <img *ngFor="let image of images; let index = index" src="{{image}}"  alt="">
+              <label *ngIf="images.length < 5" for="upload" class="btn btn-success">+</label>
+              <img *ngFor="let image of images; let index = index"  (click)="display(index)" src="{{image}}"  alt="">
               <input type="file" id="upload" hidden multiple (change)="getImage($event)">
           </div>
       </div>
