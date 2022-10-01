@@ -8,7 +8,8 @@
       <div class="slider">
           <div class="uploudBtn">
               <label for="upload" class="btn btn-success">+</label>
-              <input type="file" id="upload" hidden multiple >
+              <img *ngFor="let image of images; let index = index" src="{{image}}"  alt="">
+              <input type="file" id="upload" hidden multiple (change)="getImage($event)">
           </div>
       </div>
       <div class="d-flex justify-content-end align-items-center p-4">
