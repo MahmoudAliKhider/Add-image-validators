@@ -6,8 +6,9 @@
   inset: 0;
   .delete{
       position: absolute;
+      //margin-bottom: 90px;
       background: linear-gradient(to top, #dd4848, #900a0a);
-      top: 10%;
+      top: 6%;
       left: 25%;
   }
   .sliderBox {
@@ -60,5 +61,11 @@
       width: 35px;
       margin:  0 10px;
       cursor: pointer;
+  }
+
+  .btn {
+    &:active{
+      box-shadow:none;
+    }
   }
 }
